@@ -1,7 +1,6 @@
 /**
  * 倒计时
  */
-const timeContainer = []; // 全局定时器容器
 
 class fnCountDown {
     constructor(opt) {
@@ -42,7 +41,6 @@ class fnCountDown {
             this.interval = setInterval(() => {
                 this.updateTimer();
             }, this.opt.refreshTime);
-            timeContainer.push(this.interval);
         }
     }
 
@@ -84,9 +82,6 @@ class fnCountDown {
 
     // 清除定时器
     clear() {
-        timeContainer.forEach(item => {
-            clearInterval(item);
-        })
         clearInterval(this.interval);
     }
 
